@@ -21,6 +21,11 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'description',
         message: 'Enter description for the new terraform module : ',
+      },
+      {
+        type: 'input',
+        name: 'author',
+        message: 'Enter author name : ',
       }
     ]);
   }
