@@ -9,7 +9,7 @@ module.exports = class extends Generator {
 
   async prompting() {
     this.log(
-      yosay('Welcome to the PS tf-module generator v1.0.0!')
+      yosay('Welcome to the PSssss tf-module generator v1.0.0!')
     );
 
     this.answers = await this.prompt([{
@@ -21,26 +21,6 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'description',
         message: 'Enter description for the new terraform module : ',
-      },
-      {
-        type: 'input',
-        name: 'author',
-        message: 'Enter author name : ',
-      },
-      {
-        type: 'list',
-        name: 'testFramework',
-        message: 'Choose test framework',
-        choices: [{
-            name: 'Terratest',
-            value: '1',
-            checked: true
-          },
-          {
-            name: 'kitchen-terraform',
-            value: '2'
-          },
-        ]
       }
     ]);
   }
@@ -91,21 +71,10 @@ module.exports = class extends Generator {
       `${this.destinationRoot()}/.devcontainer`
     );
 
-    if (this.answers.testFramework === '1') {
-      this.fs.copyTpl(
-        `${this.templatePath()}/test/terratest/*.go`,
-        `${this.destinationRoot()}/test`
-      );
-    } else {
-      this.fs.copyTpl(
-        `${this.templatePath()}/test/kitchen-terraform/.*`,
-        this.destinationRoot()
-      );
-      this.fs.copyTpl(
-        `${this.templatePath()}/test/kitchen-terraform/**/*`,
-        this.destinationRoot()
-      );
-    }
+    this.fs.copyTpl(
+      `${this.templatePath()}/test/terratest/*.go`,
+      `${this.destinationRoot()}/test`
+    );
 
     this.fs.copyTpl(
       this.templatePath('_README.md'),
