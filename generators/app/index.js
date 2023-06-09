@@ -61,12 +61,6 @@ module.exports = class extends Generator {
     );
 
     this.fs.copyTpl(
-      this.templatePath('.terraform-version'),
-      this.destinationPath(`.terraform-version`), {
-      }
-    );
-
-    this.fs.copyTpl(
       `${this.templatePath()}/**/*`,
       this.destinationRoot()
     );
