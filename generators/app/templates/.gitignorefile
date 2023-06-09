@@ -1,6 +1,16 @@
-.terraform
-terraform.tfstate
-*.tfstate*
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
 terraform.tfvars
-*.backup<% if(testFramework == '2') { %>
-*.kitchen<% } %>
+terraform.tfvars.json
+*.lock.hcl
+!terratest/example/terraform.tfvars.json
+!terratest/example/terraform.tfvars
+install.sh

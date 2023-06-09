@@ -9,7 +9,7 @@ module.exports = class extends Generator {
 
   async prompting() {
     this.log(
-      yosay('Welcome to the PSssss tf-module generator v1.0.0!')
+      yosay('Welcome to the PS tf-module generator v1.0.0!')
     );
 
     this.answers = await this.prompt([{
@@ -71,15 +71,10 @@ module.exports = class extends Generator {
       this.destinationRoot()
     );
 
-    this.fs.copyTpl(
-      `${this.templatePath()}/.devcontainer/`,
-      `${this.destinationRoot()}/.devcontainer`
-    );
-
-    this.fs.copyTpl(
-      `${this.templatePath()}/test/terratest/*.go`,
-      `${this.destinationRoot()}/test`
-    );
+    // this.fs.copyTpl(
+    //   `${this.templatePath()}/terratest/*`,
+    //   `${this.destinationRoot()}/test`
+    // );
 
     this.fs.copyTpl(
       this.templatePath('_README.md'),

@@ -1,0 +1,6 @@
+name_override                 = "terratest-route-table"
+location                      = "eastus"
+subsidiary                    = "sbx"
+project_name                  = "ccoe"
+service_name                  = "cicd"
+environment                   = "dev"
